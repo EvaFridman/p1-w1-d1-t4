@@ -48,3 +48,7 @@ console.log(studyTimer.reset()); // Stopwatch {label: 'Учёба', seconds: 0}
 console.log(workTimer.tick().tick().tick().format()); // Работа: 00:03
 console.log(restTimer.tick().tick().tick().tick().format()); // Отдых: 00:04
 console.log(studyTimer.tick().tick().tick().tick().tick().format()); // Учёба: 00:05
+
+console.log(workTimer.hasOwnProperty("tick")); // false
+console.log(Object.getPrototypeOf(workTimer) === Stopwatch.prototype); // true
+console.log(workTimer.tick === restTimer.tick); // true
